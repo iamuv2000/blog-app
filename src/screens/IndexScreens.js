@@ -5,7 +5,7 @@ import {Feather} from '@expo/vector-icons'
 import { Directions } from 'react-native-gesture-handler'
 
 const IndexScreen = ({navigation}) =>{
-    const {state,addBlogPost,deleteBlogPost} = useContext(BlogContext)
+    const {state,deleteBlogPost} = useContext(BlogContext)
     return (
         <View>
          {state.length===0

@@ -2,7 +2,7 @@ import React,{useState,useContext} from 'react'
 import {View,Text,StyleSheet,TextInput,Button} from 'react-native'
 import {Context as BlogContext} from '../context/BlogContext'
 
-const CreateScreen = ({navigation}) => {
+const EditScreen = ({navigation}) => {
     const {addBlogPost} = useContext(BlogContext)
     const [title,setTitle]=useState('');
     const [content,setContent]=useState('');
@@ -49,4 +49,4 @@ const styles = StyleSheet.create({
     }
 })
 
-export default CreateScreen
+export default EditScreen
