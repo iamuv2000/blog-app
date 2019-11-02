@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
 
 ShowScreen.navigationOptions=({navigation})=>{
     return{
-        headerRight: <TouchableOpacity onPress={()=>navigation.navigate('Create')}>
+        headerRight: <TouchableOpacity onPress={()=>navigation.navigate('Edit',{id:navigation.getParam('id')})}>
         <Feather name="edit" size={25} style={{marginRight:15}}/>
         </TouchableOpacity>
     }

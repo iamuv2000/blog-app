@@ -3,25 +3,28 @@ import {View,Text,StyleSheet,TextInput,Button} from 'react-native'
 import {Context as BlogContext} from '../context/BlogContext'
 
 const EditScreen = ({navigation}) => {
-    const {addBlogPost} = useContext(BlogContext)
-    const [title,setTitle]=useState('');
-    const [content,setContent]=useState('');
+    id = navigation.getParam('id');
+    const {state,addBlogPost} = useContext(BlogContext)
+    const blogPost = state.find((blogpost)=> blogpost.id===id)
+    console.log(blogPost);
+    const [title,setTitle]=useState(blogPost.title);
+    const [content,setContent]=useState(blogPost.content);
     return(
         <View>
             <TextInput 
                 style={styles.inputTitle}
-                placeholder="Enter Title"
+                placeholder={title}
                 onChangeText={(text)=>setTitle(text)}
                 value={title}
             />
             <TextInput 
                 style={styles.inputContent}
                 multiline={true} 
-                placeholder="Type here..."
+                placeholder={content}
                 onChangeText={(text)=>setContent(text)}
                 value={content}
             />
-            <Button title="Add a new post" onPress={()=>{
+            <Button title="Edit" onPress={()=>{
                 addBlogPost(title,content,()=>{
                     navigation.navigate('Index')
                 })
