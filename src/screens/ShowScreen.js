@@ -10,14 +10,28 @@ const ShowScreen = ({navigation}) => {
     console.log(blogPost)
     return(
         <View>
-            <Text>{blogPost.title}</Text>
-            <Text>{blogPost.content}</Text>
+            <Text style={styles.inputTitle}>{blogPost.title}</Text>
+            <Text style={styles.inputContent}>{blogPost.content}</Text>
         </View>
     )
 }
 
 const styles = StyleSheet.create({
-
+    inputTitle:{
+        fontSize:22,
+        borderColor: 'rgba(0,0,0,0.4)',
+        borderBottomWidth:1,
+        paddingVertical:2,
+        marginTop:20,
+        marginHorizontal:10,
+    },
+    inputContent:{
+        fontSize:18,
+        paddingVertical:2,
+        marginTop:20,
+        marginHorizontal:10,
+        height:'80%',
+    }
 })
 
 ShowScreen.navigationOptions=({navigation})=>{
