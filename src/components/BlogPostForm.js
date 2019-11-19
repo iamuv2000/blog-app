@@ -6,7 +6,7 @@ const BlogPostForm =({onSubmit,initialValues}) => {
 
     const [title,setTitle]=useState(initialValues.title);
     const [content,setContent]=useState(initialValues.content);
-
+    //Git success
     return(
         <View>
             <TextInput 
